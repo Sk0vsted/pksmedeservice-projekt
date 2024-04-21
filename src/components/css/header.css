@@ -1,0 +1,19 @@
+@media only screen and (max-width: 768px) {
+  .hide-on-small {
+    display: none;
+  }
+  .show-on-small {
+    display: block;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .hide-on-large {
+    display: none;
+  }
+  .show-on-large {
+    display: block;
+  }
+}
+
+

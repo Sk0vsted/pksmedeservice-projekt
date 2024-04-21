@@ -1,0 +1,117 @@
+.border-animation-wrapper {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .border-animation-wrapper:before,
+  .border-animation-wrapper:after,
+  .border-animation-wrapper .bottom,
+  .border-animation-wrapper .top {
+    content: "";
+    position: absolute;
+    background: #F8A145;  /* Farven på borderen */
+    pointer-events: none;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .border-animation-wrapper:before,
+  .border-animation-wrapper .bottom {
+    width: 0%;
+    height: 5px;
+  }
+  
+  .border-animation-wrapper:after,
+  .border-animation-wrapper .top {
+    height: 0%;
+    width: 5px;
+  }
+  
+  .border-animation-wrapper:before {
+    left: 0;
+    top: 0;
+  }
+  
+  .border-animation-wrapper:after {
+    left: 0;
+    top: 0;
+  }
+  
+  .border-animation-wrapper .bottom {
+    right: 0;
+    bottom: 0;
+  }
+  
+  .border-animation-wrapper .top {
+    right: 0;
+    bottom: 0;
+  }
+  
+  .border-animation-wrapper:hover:before,
+  .border-animation-wrapper:hover .bottom {
+    width: 100%;
+  }
+  
+  .border-animation-wrapper:hover:after,
+  .border-animation-wrapper:hover .top {
+    height: 100%;
+  }
+
+  .mt-auto {
+    padding-top: auto;
+  }
+
+  .image-container {
+    position: relative;
+  }
+  
+  .image-container img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+  
+  .image-container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.3), transparent);
+    z-index: 1;
+  }
+  
+  .shadowHover {
+    transition: filter 0.3s ease-in-out;
+    filter: drop-shadow(0 0 0 rgb(0 0 0 / 0));
+  }
+  
+  .shadowHover:hover {
+    filter: drop-shadow(0 10px 10px rgb(0 0 0 / 0.85));
+  }
+
+  .fade-in-up {
+    opacity: 0;
+    transform: translateY(100px);
+    visibility: hidden;
+    transition: opacity 1s ease-out, transform 1s ease-out, visibility 1s;
+    will-change: opacity, transform, visibility;
+  }
+  
+  .fade-in-up.show {
+    opacity: 1;
+    transform: translateY(0);
+    visibility: visible;
+  }
+
+  @media screen and (max-width: 768px) {
+    .scaleCards {
+      transform: scale(0.95);
+      padding-top: 0;
+      padding-bottom: 2rem;
+    }
+}
+  
+  
+  
+  

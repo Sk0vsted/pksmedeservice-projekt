@@ -1,0 +1,53 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import "~slick-carousel/slick/slick.css"; 
+@import "~slick-carousel/slick/slick-theme.css";
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;700&display=swap');
+
+.App {
+    text-align: center;
+  }
+  
+  body {
+    background-color: #181818;
+  }
+  
+  .hero {
+    height: calc(100vh - var(--header-height));
+  }
+  
+  .pswp__button--arrow--left, .pswp__button--arrow--right {
+    color: #F8A145; 
+}
+
+.pswp__button .pswp__icn {
+  transition: 0.2s ease-in-out;
+}
+
+.pswp__button:hover .pswp__icn {
+  fill: #F8A145;
+  scale: 1.1;
+}
+
+.pswp__custom-caption {
+  background: rgba(75, 150, 75, 0.75);
+  font-size: 16px;
+  color: #fff;
+  width: calc(100% - 32px);
+  max-width: 400px;
+  padding: 2px 8px;
+  border-radius: 4px;
+  position: absolute;
+  left: 50%;
+  bottom: 16px;
+  transform: translateX(-50%);
+}
+.pswp__custom-caption a {
+  color: #fff;
+  text-decoration: underline;
+}
+.hidden-caption-content {
+  display: none;
+}

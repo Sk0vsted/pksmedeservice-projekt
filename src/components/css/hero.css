@@ -1,0 +1,84 @@
+@keyframes imgPopUp {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.animate-imgPopUp {
+  animation: imgPopUp 0.3s ease-in-out;
+}
+
+@keyframes slideRight {
+    from {
+      opacity: 0;
+      transform: translateX(400px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  
+  .slideRight {
+    animation: slideRight 0.5s ease-in-out;
+  }
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fadeIn {
+    animation: fadeIn 0.5s ease-in-out forwards;
+}
+
+.hero {
+  height: calc(100vh - var(--header-height));
+}
+
+.hero {
+  background-image: url('../../img/hero2.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  overflow-x: hidden;
+}
+
+/* Billede for skærme under 750px */
+@media only screen and (max-width: 750px) {
+  .hero {
+    background-image: url('../../img/heroPhone.jpg');
+    background-position: unset;
+    background-position: bottom;
+    background-size: cover;
+    background-attachment: unset ;
+  }
+
+  .stropCorrect {
+    border-top-left-radius: 0px !important;
+    border-bottom-left-radius: 0px !important;
+    margin: 15rem 0 0 0;
+    background-color: transparent;
+  }
+}
+
+@media only screen and (max-width: 1250px) {
+  .buttonCorrect {
+    margin: 10px 0;
+  }
+
+  .heightCorrect {
+    height: 15rem;
+  }
+}
