@@ -96,8 +96,8 @@ const Header = forwardRef((props, ref) => {
         `}
       </style>
 
-      <nav className="flex md:shadow-lg items-center relative py-3 lg:px-16 px-4 text-lg w-full">
-        <div className="flex items-center sm:items-start md:items-start ">
+      <nav className="relative md:shadow-lg items-center flex py-3 lg:px-24 px-4 text-lg w-full justify-center">
+        <div className="flex items-center sm:items-start md:items-start mr-auto lg:w-1/4">
           <a href="/">
             <img
               src={logo}
@@ -109,14 +109,14 @@ const Header = forwardRef((props, ref) => {
             <img
               src={logo900x150}
               alt="logo"
-              className="h-10 sm:h-auto md:h-auto show-on-small hide-on-large"
+              className="h-10 sm:h-auto md:h-auto show-on-small hide-on-large mr-auto"
             />
           </a>
         </div>
         <AnimatePresence>
           {(navOpen || !isMobile) && (
             <motion.ul
-              className={`md:px-2 ml-auto z-10 md:flex md:space-x-2 absolute md:relative top-full left-0 navShowing right-0`}
+              className={`md:px-2 z-10 md:flex md:space-x-2 absolute md:relative top-full navShowing justify-center grow lg:w-2/4 w-full`}
               initial="closed"
               animate="open"
               exit="closed"
@@ -125,28 +125,32 @@ const Header = forwardRef((props, ref) => {
               <NavLink
                 to="/"
                 activeClassName="is-active"
-                className="flex justify-between md:inline-flex p-4 items-center hover:text-primary space-x-2 text-light hover:cursor-pointer bg-darker"
+                className="flex text-lg justify-between md:inline-flex p-4 lg:mx-2 items-center hover:text-primary space-x-2 text-light hover:cursor-pointer bg-darker"
               >
                 Hjem
               </NavLink>
 
               <li className="relative parent">
-                <a
-                  className="flex justify-between md:inline-flex p-4 items-center hover:text-primary space-x-2 text-light hover:cursor-pointer bg-darker"
+                <NavLink
+                  className="flex text-lg justify-between md:inline-flex p-4 lg:mx-2 items-center hover:text-primary space-x-2 text-light hover:cursor-pointer bg-darker"
                   onClick={() => setServicesDropdownOpen(!servicesDropdownOpen)}
+                  to="/services"
+                  activeClassName="is-active"
                 >
                   Services
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
-                    className="w-4 h-4 fill-current pt-1"
+                    className={`w-4 h-4 fill-current pt-1 ml-1 transition duration-200 ease-in-out ${
+                      servicesDropdownOpen ? "rotate change-color" : ""
+                    } md:hidden lg:hidden`}
                     viewBox="0 0 24 24"
                   >
                     <path d="M0 7.33l2.829-2.83 9.175 9.339 9.167-9.339 2.829 2.83-11.996 12.17z" />
                   </svg>
-                </a>
+                </NavLink>
                 <AnimatePresence mode="wait">
                   {wrapperOpen && (
-                    <div className="md:absolute top-full right-0 md:w-48 bg-darker md:shadow-lg md:rounded-b">
+                    <div className="md:absolute top-full right-0 md:w-48 bg-darker md:shadow-lg md:rounded-b lg:hidden md:hidden">
                       <motion.ul
                         className={`child font-ubuntu flex flex-col ${
                           servicesDropdownOpen ? "" : "hidden md:block"
@@ -205,7 +209,7 @@ const Header = forwardRef((props, ref) => {
 
               <li className="relative parent">
                 <a
-                  className="flex justify-between md:inline-flex p-4 items-center hover:text-primary space-x-2 text-light hover:cursor-pointer bg-darker"
+                  className="flex text-lg  justify-between md:inline-flex p-4 lg:mx-2 items-center hover:text-primary space-x-2 text-light hover:cursor-pointer bg-darker"
                   onClick={() => setPicturesDropdownOpen(!picturesDropdownOpen)}
                 >
                   <NavLink to="/om-os" activeClassName="is-active">
@@ -215,7 +219,7 @@ const Header = forwardRef((props, ref) => {
               </li>
 
               <li>
-                <a className="flex justify-between md:inline-flex p-4 items-center hover:text-primary space-x-2 text-light hover:cursor-pointer bg-darker">
+                <a className="flex text-lg  justify-between md:inline-flex p-4 lg:mx-2 items-center hover:text-primary space-x-2 text-light hover:cursor-pointer bg-darker">
                   <NavLink to="/galleri" activeClassName="is-active">
                     Billeder
                   </NavLink>
@@ -225,13 +229,23 @@ const Header = forwardRef((props, ref) => {
               <NavLink
                 to="/kontakt"
                 activeClassName="is-active"
-                className="flex justify-between md:inline-flex p-4 items-center hover:text-primary space-x-2 text-light hover:cursor-pointer bg-darker"
+                className="flex text-lg justify-between md:inline-flex p-4 lg:mx-2 items-center hover:text-primary space-x-2 text-light hover:cursor-pointer bg-darker lg:hidden"
               >
                 Kontakt
               </NavLink>
             </motion.ul>
           )}
         </AnimatePresence>
+        <div className="hidden lg:flex w-1/4 justify-end items-center">
+          <NavLink
+            to="/kontakt"
+            activeClassName="is-active"
+            className="border-2 border-primary text-light text-lg px-12 rounded-full lg:flex hidden hover:drop-shadow-xl hover:bg-primary hover:cursor-pointer hover:text-light 
+              hover:text-transform transition duration-300 font-ubuntu ease-in-out items-center justify-center py-2 basis-36 grow-0 shrink-0 ml-auto"
+          >
+            Kontakt
+          </NavLink>
+        </div>
         <div
           className={`ml-auto md:hidden text-gray-500 cursor-pointer ${
             isMobile ? "" : "hidden"

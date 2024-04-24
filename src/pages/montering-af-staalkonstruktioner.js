@@ -41,23 +41,6 @@ const Montering = () => {
             "Vi ved, at vi er forpligtet til at levere ekstraordinære løsninger i montering af stålkonstruktioner, der er en markant repræsentation af vores håndværk og dedikation. Uanset om det er til private hjem, kontorbygninger eller andre komplekser, har vi kompetencerne til at løfte dit projekt til nye højder."
           }
         />
-        <div className="cardWrapper flex justify-around px-16 bg-gray-100 flex-col sm:px-0 md:px-0 lg:flex-row">
-          <Card
-            title="New Yorker Partier"
-            description="Perfekt til at adskille rum uden at gå på kompromis med lys og rumfølelse. Vores New-Yorker partier er lavet af højkvalitets materialer og skræddersyes til dine behov og ønsker."
-            buttonLabel="Se mere"
-          />
-          <Card
-            title="Brusevægge"
-            description="Står du og mangler en lækker brusevæg, som er skrædersyet til dit badeværelse? Så er vi det rigtige valg. Vi laver brusevægge i alle størrelser og former, og vi går ikke på kompromis med kvaliteten."
-            buttonLabel="Se mere"
-          />
-          <Card
-            title="Glaspartier"
-            description="Vi laver også glaspartier, som kan bruges til at adskille rum, lave et fint vin-rum, gelænder til trappen eller noget helt andet. Vi laver glaspartier præcist til dine behov og ønsker."
-            buttonLabel="Se mere"
-          />
-        </div>
       </div>
     </div>
   );

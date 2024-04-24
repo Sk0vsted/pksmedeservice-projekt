@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import Header from "../components/header";
 import TitleBreak from "../components/titleBreak";
 import Description from "../components/description";
@@ -7,6 +7,14 @@ import { Link } from "react-router-dom";
 import Card from "../components/card";
 
 const OmOs = () => {
+  const textRef = useRef();
+
+  useEffect(() => {
+    if (textRef.current) {
+      textRef.current.classList.add("fadeIn");
+    }
+  }, []);
+
   return (
     <div>
       <Header />
@@ -17,9 +25,10 @@ const OmOs = () => {
         subtitleColor={"text-gray-400"}
       />
       <div className="py-12 px-4 lg:px-80 px-20">
-        <h1 className="font-roboto text-light text-3xl pb-12">
+        <h1 ref={textRef} className="font-roboto text-light text-3xl pb-12">
           Vi er PK Smedeservice ApS - og vi har øje for detaljen
         </h1>
+
         <p className="font-ubuntu text-light text-xl font-thin text-center">
           Med 18 års erfaring i smedebranchen har vi hos PK Smedeservice
           udviklet en dyb forståelse for, at effektive løsninger inden for

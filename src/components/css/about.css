@@ -1,25 +1,25 @@
 .fade-in-right {
-    opacity: 0;
-    transform: translateX(400px);
-    visibility: hidden;
-    transition: opacity 1s ease-out, transform 1s ease-out, visibility 1s;
-    will-change: opacity, transform, visibility;
-  }
-  
-  .fade-in-right.show {
-    opacity: 1;
-    transform: translateX(0);
-    visibility: visible;
-  }
+  opacity: 0;
+  transform: translateX(400px);
+  visibility: hidden;
+  transition: opacity 1s ease-out, transform 1s ease-out, visibility 1s;
+  will-change: opacity, transform, visibility;
+}
 
-  @media screen and (max-width: 768px) {
-    .about {
-      background-size: cover;
-      background-position: left;
-      height: 500px;
-    }
-  }
+.fade-in-right.show {
+  opacity: 1;
+  transform: translateX(0);
+  visibility: visible;
+}
 
+@media screen and (max-width: 768px) {
   .about {
-    overflow-x: hidden;
+    background-size: cover;
+    background-position: left;
+    height: 500px;
   }
+}
+
+.about {
+  overflow-x: hidden;
+}
