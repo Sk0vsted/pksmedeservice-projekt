@@ -6,8 +6,8 @@ const Privatlivspolitik = () => {
     <div>
       <Header />
       <div className="flex justify-center bg-darker border-b border-dark py-12">
-        <div className="w-1/2">
-          <h1 className="text-center text-4xl font-bold py-12 text-light font-ubuntu">
+        <div className="md:w-1/2 md:px-0 px-8">
+          <h1 className="text-center md:text-4xl text-3xl font-bold py-12 text-light font-ubuntu">
             Privatlivspolitik for PK Smedeservice ApS
           </h1>
           <h2 className="text-left text-2xl font-bold pt-6 pb-3 text-light font-ubuntu">

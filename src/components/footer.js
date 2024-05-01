@@ -25,7 +25,7 @@ const MyFooter = () => {
           >
             <h3
               className={`text-xl font-regular mb-5 expandable transition-all duration-300 ease-in-out ${
-                isKontaktOpen ? "change-color" : ""
+                isKontaktOpen ? "change-color md:text-light" : ""
               }`}
             >
               Kontakt{" "}
@@ -42,10 +42,10 @@ const MyFooter = () => {
                 isKontaktOpen ? "show" : "hide"
               } lg:show flex lg:flex flex-col`}
             >
-              <p className="text-lg lg:text-sm hover:cursor-pointer font-ubuntu mb-3 font-thin py-1 lg:py-0">
+              <p className="text-lg lg:text-sm font-ubuntu mb-3 font-thin py-1 lg:py-0">
                 PK Smedeservice ApS
               </p>
-              <p className="text-lg lg:text-sm hover:cursor-pointer font-ubuntu mb-3 font-thin py-1 lg:py-0">
+              <p className="text-lg lg:text-sm font-ubuntu mb-3 font-thin py-1 lg:py-0">
                 CVR: 34617287
               </p>
               <a
@@ -65,7 +65,7 @@ const MyFooter = () => {
           >
             <h3
               className={`text-xl font-regular mb-5 expandable transition-all duration-300 ease-in-out ${
-                isOverblikOpen ? "change-color" : ""
+                isOverblikOpen ? "change-color md:text-light" : ""
               }`}
             >
               Overblik{" "}
@@ -113,7 +113,7 @@ const MyFooter = () => {
           >
             <h3
               className={`text-xl font-regular mb-5 expandable transition-all duration-300 ease-in-out ${
-                isBetingelserOpen ? "change-color" : ""
+                isBetingelserOpen ? "change-color md:text-light" : ""
               }`}
             >
               Betingelser{" "}
@@ -149,7 +149,7 @@ const MyFooter = () => {
           >
             <h3
               className={`text-xl font-regular mb-5 expandable transition-all duration-300 ease-in-out ${
-                isFolgOsOpen ? "change-color" : ""
+                isFolgOsOpen ? "change-color md:text-light" : ""
               }`}
             >
               Følg Os{" "}

@@ -37,7 +37,7 @@ export default function Hero({ title, description }) {
         }
       >
         <div
-          className="hero-text heightCorrect stropCorrect flex flex-col justify-center overflow-hidden items-center bg-primary lg:items-end text-center lg:w-3/5 h-64 lg:h-48 lg:px-12 sm:w-4/5 md:w-4/5 sm:px-0 md:px-0"
+          className="hero-text heightCorrect stropCorrect flex flex-col justify-center overflow-hidden items-center bg-primary xl:items-end text-center xl:w-3/5 h-64 xl:h-48 xl:px-12 sm:w-4/5 md:w-4/5 sm:px-0 md:px-0 lg:items-center lg:w-4/5 lg:px-0"
           style={{
             borderTopLeftRadius: "10px",
             borderBottomLeftRadius: "10px",
@@ -49,7 +49,7 @@ export default function Hero({ title, description }) {
           <p className="text-gray-100 text-lg font-ubuntu lg:px-12">
             {description}
           </p>
-          <div className="button buttonCorrect lg:mt-5 md:mt-0 lg:mr-12 mt-5 relative z-1">
+          <div className="button buttonCorrect lg:mt-5 lg:mr-0 md:mt-0 xl:mr-12 mt-5 relative z-1">
             <Link to="/services">
               <Button label={"Vores services"} />
             </Link>

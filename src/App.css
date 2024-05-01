@@ -97,3 +97,10 @@ body {
 .fadeIn {
   animation: fadeIn 2s ease-in forwards;
 }
+
+.info-icon {
+  width: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

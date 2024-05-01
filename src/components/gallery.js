@@ -66,9 +66,9 @@ function SlideShow() {
   }, []);
 
   return (
-    <div className="flex w-full justify-between flex-col lg:px-32 lg:flex-row">
-      <div className="text w-full lg:w-2/4 px-5 pt-8 lg:pt-0 lg:px-0 h-500px flex flex-col items-start justify-center text-start">
-        <h1 className="text-4xl text-light font-roboto pb-3 lg:text-start text-center">
+    <div className="flex w-full justify-between flex-col xl:px-32 lg:px-24 lg:flex-col xl:flex-row">
+      <div className="text w-full xl:w-2/4 px-5 pt-8 xl:pt-0 lg:pt-8 lg:px-0 h-500px flex flex-col items-start lg:items-center xl:items-start justify-center text-start">
+        <h1 className="text-4xl text-light font-roboto pb-3 xl:text-start text-center">
           Hos PK Smedeservice lytter vi altid til kunden
         </h1>
         <p className="text-gray-100 text-lg font-ubuntu pb-0 lg:pb-8">

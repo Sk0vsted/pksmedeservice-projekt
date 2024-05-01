@@ -24,7 +24,7 @@ const OmOs = () => {
         titleColor={"text-light"}
         subtitleColor={"text-gray-400"}
       />
-      <div className="py-12 px-4 lg:px-80 px-20">
+      <div className="py-12 px-4 lg:px-40 xl:px-80 px-20">
         <h1 ref={textRef} className="font-roboto text-light text-3xl pb-12">
           Vi er PK Smedeservice ApS - og vi har øje for detaljen
         </h1>
@@ -42,9 +42,9 @@ const OmOs = () => {
           projekter, der spænder fra mindre opgaver til større
           virksomhedsinitiativer. Beliggende i Egholt, en idyllisk landsby kun
           ti minutters kørsel fra Kolding, er vores virksomhed grundlagt og
-          ledet af Pau Kristiansen, en erfaren smed med over 31 års erfaring i
-          branchen. Pau har altid haft en dyb passion for smedearbejde, især når
-          det kommer til at udvikle innovative og unikke løsninger.
+          ledet af Pau Kristiansen, en smed med over 31 års erfaring i branchen.
+          Pau har altid haft en dyb passion for smedearbejde, især når det
+          kommer til at udvikle innovative og unikke løsninger.
         </p>
         <p className="font-ubuntu text-light text-xl font-thin text-center pt-6">
           Vi tror fast på, at de bedste løsninger opstår gennem et tæt
@@ -57,7 +57,7 @@ const OmOs = () => {
           <img
             src={Pauimg}
             alt="Pau Kristiansen"
-            className="rounded-xl lg:w-2/4 w-3/4"
+            className="rounded-xl xl:w-2/4 lg:w-3/4 w-3/4"
           />
           <p className="font-ubuntu text-light text-xl font-thin text-left pt-2">
             Pau Kristiansen, indehaver af PK Smedeservice ApS

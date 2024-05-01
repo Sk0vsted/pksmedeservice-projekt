@@ -66,7 +66,7 @@ const Home = () => {
         subtitleColor={"text-gray-400"}
       />
 
-      <div className="cardWrapper flex justify-around px-16 bg-gray-100 flex-col sm:px-0 md:px-0 lg:flex-row">
+      <div className="cardWrapper flex justify-around px-16 bg-gray-100 flex-col sm:px-0 md:px-0 lg:flex-col xl:flex-row">
         <Card
           title="Interiørarbejde"
           description="Vi laver alt inden for interiørarbejde. Vi har 18 års erfaring og kan hjælpe dig med at skabe det perfekte interiør til dit hjem eller din virksomhed."
