@@ -1,11 +1,12 @@
 const sendgridMail = require("@sendgrid/mail");
 
-// Configure SendGrid API key
-sendgridMail.setApiKey(process.env.REACT_APP_SENDGRID_API_KEY);
+sendgridMail.setApiKey(process.env.SENDGRID_API_KEY); // Ensure this is set in Vercel's environment variables
 
 module.exports = async (req, res) => {
+  // Ensure we're dealing with a POST request
   if (req.method === "POST") {
-    const { fornavn, efternavn, email, telefon, besked } = req.body;
+    // Parse the incoming JSON payload
+    const { fornavn, efternavn, email, telefon, besked } = JSON.parse(req.body);
 
     const content = {
       to: "pau@pksmedeservice.dk",
@@ -17,14 +18,14 @@ module.exports = async (req, res) => {
 
     try {
       await sendgridMail.send(content);
-      res.status(200).json({ message: "Email sent successfully" });
+      return res.status(200).json({ message: "Email sent successfully" });
     } catch (error) {
       console.error("Error sending email", error);
-      res
+      return res
         .status(500)
         .json({ error: "Error sending email", details: error.toString() });
     }
   } else {
-    res.status(405).json({ error: "Method Not Allowed" });
+    return res.status(405).json({ error: "Method Not Allowed" });
   }
 };
