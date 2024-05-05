@@ -104,12 +104,7 @@ const KontaktForm = ({ onFormSubmit }) => {
               rows="5"
               required
             ></textarea>
-            <div className="pt-5">
-              <ReCAPTCHA
-                sitekey="6LeGV28pAAAAAK1x2D9Q0lDnJZ9QlT2-RcJ1RX6O"
-                onChange={handleRecaptchaChange}
-              />
-            </div>
+            <div className="pt-5"></div>
             <button
               type="submit"
               className="form-control submit w-4/5 lg:w-3/6 border-2 border-primary text-light text-lg py-2 px-6 rounded-full relative hover:drop-shadow-xl hover:bg-primary hover:cursor-pointer hover:text-light 
