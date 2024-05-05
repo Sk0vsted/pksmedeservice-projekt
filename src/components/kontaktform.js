@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
 import "./css/kontaktform.css";
-import ReCAPTCHA from "react-google-recaptcha";
 
 const KontaktForm = ({ onFormSubmit }) => {
   const [submitted, setSubmitted] = useState(false);
@@ -12,18 +11,9 @@ const KontaktForm = ({ onFormSubmit }) => {
     telefon: "",
     besked: "",
   });
-  const [recaptchaValue, setRecaptchaValue] = useState(null);
-
-  const handleRecaptchaChange = (value) => {
-    setRecaptchaValue(value);
-  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    if (!recaptchaValue) {
-      alert("Bekræft venligst, at du ikke er en robot.");
-      return;
-    }
     const data = {
       fornavn: e.target.fornavn.value,
       efternavn: e.target.efternavn.value,
