@@ -33,8 +33,11 @@ const KontaktForm = ({ onFormSubmit }) => {
     };
 
     try {
-      const res = await axios.post("http://localhost:4000/sendemail", data);
-      console.log("Email sendt:", res.data);
+      const res = await axios.post(
+        "https://pksmedeservice-projekt.vercel.app/api/sendgrid",
+        data
+      );
+      console.log("Email sent:", res.data);
       setSubmitted(true);
       setFormData({
         fornavn: "",
@@ -45,7 +48,7 @@ const KontaktForm = ({ onFormSubmit }) => {
       });
       onFormSubmit();
     } catch (error) {
-      console.log("Fejl:", error);
+      console.log("Error:", error);
     }
   };
 
