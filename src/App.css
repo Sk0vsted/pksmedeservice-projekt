@@ -148,3 +148,75 @@ body {
 .select-container {
   position: relative;
 }
+
+.indicatorWrapperUl {
+  z-index: 2;
+  padding: 0;
+  margin: 0;
+  position: absolute;
+  top: -40px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: none;
+}
+
+.indicate {
+  width: 25px;
+  height: 25px;
+}
+
+.slideContainer {
+  border: none;
+}
+
+.nextButton,
+.prevButton {
+  background-size: 100%;
+  background-color: rgba(248, 161, 69, 0.8);
+  height: 30px;
+  width: 30px;
+  border-radius: 4px;
+  color: #fff;
+  border: none;
+  outline: 0;
+  cursor: pointer;
+  opacity: 0.5;
+  transition: 0.3s;
+}
+
+.nextButton:hover,
+.prevButton:hover {
+  opacity: 1;
+}
+
+.fade-in {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 2s ease-out, transform 2s ease-out, visibility 2s;
+  will-change: opacity, transform, visibility;
+}
+
+.fade-in.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+@media screen and (max-width: 768px) {
+  .showSmall {
+    display: inline;
+  }
+
+  .hideSmall {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 780px) {
+  .showBig {
+    display: inline;
+  }
+
+  .hideBig {
+    display: none;
+  }
+}
