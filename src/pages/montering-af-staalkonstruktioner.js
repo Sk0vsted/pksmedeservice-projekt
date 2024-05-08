@@ -4,7 +4,7 @@ import TitleBreak from "../components/titleBreak";
 import Card from "../components/card";
 import SlideShow from "../components/slideShow";
 import SimpleImageSlider from "react-simple-image-slider";
-import { interiorImages } from "../components/importImages";
+import { monteringImages } from "../components/importImages";
 import { Slide } from "react-slideshow-image";
 import Title from "../components/title";
 import Beskrivelse from "../components/description";
@@ -20,7 +20,7 @@ const Montering = () => {
           titleColor={"text-light"}
         />
         <div className="flex justify-center bg-darker">
-          <SlideShow images={interiorImages} />
+          <SlideShow images={monteringImages} />
         </div>
         <TitleBreak
           title={"Montering af Stålkonstruktioner"}

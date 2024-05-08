@@ -4,7 +4,7 @@ import TitleBreak from "../components/titleBreak";
 import Card from "../components/card";
 import SlideShow from "../components/slideShow";
 import SimpleImageSlider from "react-simple-image-slider";
-import { interiorImages } from "../components/importImages";
+import { metalImages } from "../components/importImages";
 import { Slide } from "react-slideshow-image";
 import Title from "../components/title";
 import Beskrivelse from "../components/description";
@@ -20,7 +20,7 @@ const MetalOgRustfrit = () => {
           titleColor={"text-light"}
         />
         <div className="flex justify-center bg-darker">
-          <SlideShow images={interiorImages} />
+          <SlideShow images={metalImages} />
         </div>
         <TitleBreak
           title={"Metal og Rustfrit"}
@@ -43,23 +43,6 @@ const MetalOgRustfrit = () => {
             "Kvalitet er kernen i alt, hvad vi gør. Vores materialer og teknikker er nøje udvalgt for at sikre langvarig skønhed og holdbarhed i vores arbejde. Vi er stolte over at have bidraget med vores ekspertise til en lang række tilfredse kunder over hele Danmark og stræber altid efter at leve op til forventningerne med vores metal- og rustfrit arbejde."
           }
         />
-        <div className="cardWrapper flex justify-around px-16 bg-gray-100 flex-col sm:px-0 md:px-0 lg:flex-row">
-          <Card
-            title="New Yorker Partier"
-            description="Perfekt til at adskille rum uden at gå på kompromis med lys og rumfølelse. Vores New-Yorker partier er lavet af højkvalitets materialer og skræddersyes til dine behov og ønsker."
-            buttonLabel="Se mere"
-          />
-          <Card
-            title="Brusevægge"
-            description="Står du og mangler en lækker brusevæg, som er skrædersyet til dit badeværelse? Så er vi det rigtige valg. Vi laver brusevægge i alle størrelser og former, og vi går ikke på kompromis med kvaliteten."
-            buttonLabel="Se mere"
-          />
-          <Card
-            title="Glaspartier"
-            description="Vi laver også glaspartier, som kan bruges til at adskille rum, lave et fint vin-rum, gelænder til trappen eller noget helt andet. Vi laver glaspartier præcist til dine behov og ønsker."
-            buttonLabel="Se mere"
-          />
-        </div>
       </div>
     </div>
   );

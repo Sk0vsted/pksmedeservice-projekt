@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import hero from "../img/hero1.jpg";
 import "./css/hero.css";
 import Button from "./button.js";
@@ -7,8 +7,8 @@ import heroPhone from "../img/heroPhone.jpg";
 import { Link } from "react-router-dom";
 
 export default function Hero({ title, description }) {
-  const [startAnimation, setStartAnimation] = React.useState(false);
-  const [show, setShow] = React.useState(false);
+  const [startAnimation, setStartAnimation] = useState(false);
+  const [show, setShow] = useState(false);
 
   React.useEffect(() => {
     const timer = setTimeout(() => {

@@ -4,7 +4,7 @@ import Header from "../components/header";
 import "photoswipe/dist/photoswipe.css";
 import { Gallery, Item } from "react-photoswipe-gallery";
 import "photoswipe-dynamic-caption-plugin/photoswipe-dynamic-caption-plugin.css";
-import Title from "../components/title";
+import TitleBreak from "../components/titleBreak";
 import { CloudinaryContext } from "cloudinary-react";
 import Masonry, { ResponsiveMasonry } from "react-responsive-masonry";
 import About from "../components/about";
@@ -51,7 +51,13 @@ const Galleri = () => {
   return (
     <div>
       <Header />
-      <Title title={"Galleri"} titleColor={"text-light"} />
+      <TitleBreak
+        title={"Galleri"}
+        subtitle={"Se vores arbejde"}
+        bgClass={"bg-darker"}
+        titleColor={"text-light"}
+        subtitleColor={"text-gray-400"}
+      />
       <select
         value={selectedFolder}
         onChange={(e) => setSelectedFolder(e.target.value)}
