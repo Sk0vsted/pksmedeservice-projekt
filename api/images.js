@@ -1,6 +1,5 @@
 const cloudinary = require("cloudinary").v2;
 
-// Cloudinary configuration
 cloudinary.config({
   cloud_name: process.env.REACT_APP_CLOUD_NAME,
   api_key: process.env.REACT_APP_CLOUDINARY_API_KEY,

@@ -55,7 +55,7 @@ const Galleri = () => {
       <select
         value={selectedFolder}
         onChange={(e) => setSelectedFolder(e.target.value)}
-        className="select-style w-1/4"
+        className="select-style xl:w-1/4 w-3/4 lg:w-1/3"
       >
         <option value="Baade">Både</option>
         <option value="Bede_udendors">Bede Udendørs</option>
