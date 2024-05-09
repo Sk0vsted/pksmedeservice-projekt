@@ -24,6 +24,7 @@ import process from "process";
 import interior1 from "./img/interior/interior7.jpg";
 import gelaender1 from "./img/gelaender.JPG";
 import metal1 from "./img/metal.JPG";
+import { Helmet } from "react-helmet";
 window.process = process;
 
 require("dotenv").config();
