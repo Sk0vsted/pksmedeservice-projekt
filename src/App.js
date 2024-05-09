@@ -70,12 +70,13 @@ const Home = () => {
         subtitleColor={"text-gray-400"}
       />
 
-      <div className="cardWrapper flex justify-around px-16 bg-gray-100 flex-col sm:px-0 md:px-0 lg:flex-col xl:flex-row">
+      <div className="cardWrapper flex justify-around md:px-16 bg-gray-100 flex-col sm:px-0 md:px-0 lg:flex-col xl:flex-row">
         <Card
           title="Interiørarbejde"
           src={interior1}
           description="Vi laver alt inden for interiørarbejde. Vi har 18 års erfaring og kan hjælpe dig med at skabe det perfekte interiør til dit hjem eller din virksomhed."
           buttonLabel="Se mere"
+          to="/interiorarbejde"
         />
 
         <Card
@@ -83,6 +84,7 @@ const Home = () => {
           src={metal1}
           description="Står du og mangler en smed til at lave noget indenfor metal, både rustfrit og alm. stål, så er vi klar til at hjælpe dig. Vi kan lave alt fra små til store opgaver."
           buttonLabel="Se mere"
+          to="/metal-og-rustfrit"
         />
 
         <Card
@@ -90,6 +92,7 @@ const Home = () => {
           src={gelaender1}
           description="Ønsker du at få lavet en ny altan eller et nyt gelænder? Vi kan skabe et skrædersyet design, der er præcis, som du ønsker det, og vi kan hjælpe dig med at få det monteret."
           buttonLabel="Se mere"
+          to="/gelaendere-og-altaner"
         />
       </div>
 

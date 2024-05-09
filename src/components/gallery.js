@@ -89,9 +89,7 @@ function SlideShow() {
           <SmartSlider
             slides={slidesArray}
             buttonShape="square"
-            autoSlide={true}
             showIndicators={false}
-            autoSlideInterval={10000}
           />
         </div>
         <div className="showSmall hideBig mt-5 lg:mt-0">

@@ -50,9 +50,7 @@ export default function Hero({ title, description }) {
             {description}
           </p>
           <div className="button buttonCorrect lg:mt-5 lg:mr-0 md:mt-0 xl:mr-12 mt-5 relative z-1">
-            <Link to="/services">
-              <Button label={"Vores services"} />
-            </Link>
+            <Button label={"Vores services"} to="/services" />
           </div>
         </div>
       </div>

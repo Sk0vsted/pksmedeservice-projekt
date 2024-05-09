@@ -60,7 +60,7 @@ const OmOs = () => {
           <img
             src={Pauimg}
             alt="Pau Kristiansen"
-            className="rounded-xl xl:w-2/4 lg:w-3/4 w-3/4"
+            className="rounded-xl xl:w-2/4 lg:w-3/4 w-full"
           />
           <p className="font-ubuntu text-light text-xl font-thin text-left pt-2">
             Pau Kristiansen, indehaver af PK Smedeservice ApS
@@ -75,7 +75,7 @@ const OmOs = () => {
         subtitleColor={"text-gray-400"}
       />
 
-      <div className="cardWrapper flex justify-around px-16 bg-gray-100 flex-col sm:px-0 md:px-0 lg:flex-row">
+      <div className="cardWrapper flex justify-around md:px-16 bg-gray-100 flex-col sm:px-0 md:px-0 lg:flex-row">
         <Card
           title="Interiørarbejde"
           src={interior1}
