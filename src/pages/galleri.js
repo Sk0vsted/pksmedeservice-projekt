@@ -8,6 +8,7 @@ import TitleBreak from "../components/titleBreak";
 import { CloudinaryContext } from "cloudinary-react";
 import Masonry, { ResponsiveMasonry } from "react-responsive-masonry";
 import About from "../components/about";
+import { Helmet } from "react-helmet";
 
 const options = {
   bgOpacity: 0.8,
@@ -50,6 +51,13 @@ const Galleri = () => {
 
   return (
     <div>
+      <Helmet>
+        <title>PK Smedeservice ApS | Galleri</title>
+        <meta
+          name="description"
+          content="Se vores galleri af tidligere arbejde. Vi udfører alt inden for smedeopgaver og glasarbejde."
+        />
+      </Helmet>
       <Header />
       <TitleBreak
         title={"Galleri"}

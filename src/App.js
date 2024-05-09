@@ -54,6 +54,16 @@ const Home = () => {
 
   return (
     <div>
+      <Helmet>
+        <title>
+          PK Smedeservice ApS | Smedeservice, som altid sætter kunden i første
+          række!
+        </title>
+        <meta
+          name="description"
+          content="PK Smedeservice ApS er en smedevirksomhed med 18 års erfaring inden for metalarbejde, interiørarbejde og industri-smederi. Vi er beliggende i Egholt, en idyllisk landsby kun ti minutters kørsel fra Kolding."
+        />
+      </Helmet>
       <Header ref={headerRef} />
       <Hero
         title={"Velkommen til PK Smedeservice ApS"}

@@ -8,6 +8,7 @@ import Card from "../components/card";
 import interior1 from "../img/interior/interior7.jpg";
 import gelaender1 from "../img/gelaender.JPG";
 import metal1 from "../img/metal.JPG";
+import { Helmet } from "react-helmet";
 
 const OmOs = () => {
   const textRef = useRef();
@@ -20,6 +21,13 @@ const OmOs = () => {
 
   return (
     <div>
+      <Helmet>
+        <title>PK Smedeservice ApS | Om os</title>
+        <meta
+          name="description"
+          content="Læs om PK Smedeservice ApS og vores historie. Vi har mere end 18 års erfaring og er specialister i smedeopgaver."
+        />
+      </Helmet>
       <Header />
       <TitleBreak
         title={"Om os"}

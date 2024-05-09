@@ -8,10 +8,18 @@ import { monteringImages } from "../components/importImages";
 import { Slide } from "react-slideshow-image";
 import Title from "../components/title";
 import Beskrivelse from "../components/description";
+import { Helmet } from "react-helmet";
 
 const Montering = () => {
   return (
     <div>
+      <Helmet>
+        <title>PK Smedeservice ApS | Montering af Stålkonstruktioner</title>
+        <meta
+          name="description"
+          content="Står du og mangler hjælp til montering af stålkonstruktioner? Vi står klar til at være der for dig. Læs mere om vores løsninger her."
+        />
+      </Helmet>
       <Header />
       <div className="bg-gray-100">
         <Title

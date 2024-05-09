@@ -3,12 +3,20 @@ import Title from "../components/title";
 import Header from "../components/header";
 import KontaktForm from "../components/kontaktform";
 import { useState } from "react";
+import { Helmet } from "react-helmet";
 
 const Kontakt = () => {
   const [isFormSubmitted, setIsFormSubmitted] = useState(false);
 
   return (
     <div>
+      <Helmet>
+        <title>PK Smedeservice ApS | Kontakt Os</title>
+        <meta
+          name="description"
+          content="Kontakt os for et uforpligtende smedetilbud eller spørgsmål. Vi bestræber os på at besvare din henvendelse hurtigst muligt."
+        />
+      </Helmet>
       <Header />
       <div className="flex xl:flex-row flex-col justify-center bg-dark">
         {isFormSubmitted ? (

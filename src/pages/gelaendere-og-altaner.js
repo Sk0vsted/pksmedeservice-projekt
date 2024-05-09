@@ -8,10 +8,18 @@ import { gelaenderImages } from "../components/importImages";
 import { Slide } from "react-slideshow-image";
 import Title from "../components/title";
 import Beskrivelse from "../components/description";
+import { Helmet } from "react-helmet";
 
 const GelaendereOgAltaner = () => {
   return (
     <div>
+      <Helmet>
+        <title>PK Smedeservice ApS | Gelændere og Altaner</title>
+        <meta
+          name="description"
+          content="Vi tilbyder eksklusive løsninger indenfor gelændere og altaner, skræddersyet til dine behov. Læs mere eller kontakt os i dag, og få et godt tilbud."
+        />
+      </Helmet>
       <Header />
       <div className="bg-gray-100">
         <Title

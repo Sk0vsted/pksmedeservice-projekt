@@ -6,10 +6,18 @@ import serviceMetal from "../img/serviceMetal.jpg";
 import serviceGelaender from "../img/serviceGelaender.jpg";
 import serviceMontering from "../img/serviceMontering.jpg";
 import TitleBreak from "../components/titleBreak";
+import { Helmet } from "react-helmet";
 
 const Services = () => {
   return (
     <div>
+      <Helmet>
+        <title>PK Smedeservice ApS | Services</title>
+        <meta
+          name="description"
+          content="Se hvad vi tilbyder indenfor smedeopgaver, montering af stålkonstruktioner, interiørarbejde, metal og rustfrit arbejde, samt gelændere og altaner."
+        />
+      </Helmet>
       <Header />
       <TitleBreak
         title={"Vores Services"}

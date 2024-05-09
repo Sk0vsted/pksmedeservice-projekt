@@ -8,10 +8,18 @@ import { metalImages } from "../components/importImages";
 import { Slide } from "react-slideshow-image";
 import Title from "../components/title";
 import Beskrivelse from "../components/description";
+import { Helmet } from "react-helmet";
 
 const MetalOgRustfrit = () => {
   return (
     <div>
+      <Helmet>
+        <title>PK Smedeservice ApS | Metal og Rustfrit</title>
+        <meta
+          name="description"
+          content="Vi tilbyder høj-kvalitets metal og rustfrit arbejde, lige efter dine ønsker. Læs mere om vores løsninger her."
+        />
+      </Helmet>
       <Header />
       <div className="bg-gray-100">
         <Title

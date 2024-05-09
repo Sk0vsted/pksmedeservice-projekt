@@ -17,10 +17,18 @@ import InteriorCard5 from "../img/interior/interiorCards/interiorCard5.jpg";
 import InteriorCard6 from "../img/interior/interiorCards/interiorCard6.jpg";
 import InteriorCard7 from "../img/interior/interiorCards/interiorCard7.jpg";
 import InteriorCard8 from "../img/interior/interiorCards/interiorCard8.jpg";
+import { Helmet } from "react-helmet";
 
 const Interiørarbejde = () => {
   return (
     <div>
+      <Helmet>
+        <title>PK Smedeservice ApS | Interiørarbejde</title>
+        <meta
+          name="description"
+          content="Udforsk vores brede udvalg af interiør smedearbejde, hvor vi tilbyder alt fra skræddersyede løsninger til unikke New Yorker partier. Lær mere om, hvordan vores ekspertise og specialiseringer kan forvandle dit rum med elegance og funktionalitet"
+        />
+      </Helmet>
       <Header />
       <div className="bg-gray-100">
         <Title
