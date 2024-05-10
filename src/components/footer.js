@@ -127,12 +127,6 @@ const MyFooter = () => {
               } lg:show flex lg:flex flex-col`}
             >
               <NavLink
-                to="/cookiepolitik"
-                className="text-lg lg:text-sm hover:cursor-pointer font-ubuntu mb-3 font-thin py-1 lg:py-0 hover:text-primary"
-              >
-                Cookiepolitik
-              </NavLink>
-              <NavLink
                 to="/privatlivspolitik"
                 className="text-lg lg:text-sm hover:cursor-pointer font-ubuntu mb-3 font-thin py-1 lg:py-0 hover:text-primary"
               >

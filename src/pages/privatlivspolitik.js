@@ -27,7 +27,7 @@ const Privatlivspolitik = () => {
           </p>
           <ul className="text-left list-disc pl-12 pt-4 text-l font-bold text-light font-ubuntu">
             <li>Kontaktoplysninger: Navn, adresse, e-mail, telefonnummer.</li>
-            <li>Tekniske data: IP-adresse, browsertype, besøgstider.</li>
+            <li>Tekniske data: Browsertype, besøgstider og besøgte sider.</li>
           </ul>
           <p className="text-left text-l font-thin text-light font-ubuntu pt-4">
             Vær opmærksom på, at PK Smedeservice ApS ikke aktivt indsamler
@@ -43,9 +43,10 @@ const Privatlivspolitik = () => {
             Ved første besøg på PK Smedeservice ApS' hjemmeside, præsenteres
             brugeren med et valg gennem en cookie- og privatlivspolitik pop-up.
             Brugeren har mulighed for at give samtykke til eller afvise
-            indsamlingen af tekniske data såsom IP-adresse, browsertype og
-            besøgstider. Dette samtykke kan til enhver tid ændres eller trækkes
-            tilbage af brugeren.
+            indsamlingen af tekniske data såsom besøgstid, mest besøgte sider og
+            browsertype. Dette samtykke kan til enhver tid ændres eller trækkes
+            tilbage af brugeren, ved at klikke på "Cookieindstillinger" under
+            "Cookiepolitik" i bunden af hjemmesiden.
           </p>
           <p className="text-left text-l font-thin text-light font-ubuntu pt-4">
             Hvis brugeren vælger ikke at acceptere indsamlingen af tekniske
@@ -54,13 +55,23 @@ const Privatlivspolitik = () => {
             på hjemmesiden. PK Smedeservice ApS respekterer brugerens valg og
             sikrer, at ingen tekniske data indsamles for brugere, der har afvist
             sådan indsamling, medmindre det er strengt nødvendigt for den
-            grundlæggende funktionalitet af hjemmesiden.
+            grundlæggende funktionalitet af en indsent kontaktformular.
           </p>
           <p className="text-left text-l font-thin text-light font-ubuntu pt-4">
             Disse indsamlinger og brug af personoplysninger vil ske i
             overensstemmelse med gældende databeskyttelseslovgivning, herunder
-            EU's Generelle Databeskyttelsesforordning (GDPR).
+            EU's Generelle Databeskyttelsesforordning (GDPR). Du kan læse mere
+            om GDPR på Datatilsynets hjemmeside.
           </p>
+          <div className="py-4 flex flex-start">
+            <a
+              href="https://www.datatilsynet.dk/"
+              target="_blank"
+              className="text-left text-light font-ubuntu underline"
+            >
+              https://www.datatilsynet.dk/
+            </a>
+          </div>
           <h2 className="text-left text-2xl font-bold pt-6 pb-3 text-light font-ubuntu">
             3. Hvordan vi bruger din data
           </h2>

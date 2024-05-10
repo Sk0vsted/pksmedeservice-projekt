@@ -4,7 +4,7 @@ import Button from "./components/button";
 import Card from "./components/card";
 import Hero from "./components/hero";
 import Gallery from "./components/gallery";
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import TitleBreak from "./components/titleBreak";
 import About from "./components/about";
 import Footer from "./components/footer";
@@ -25,6 +25,8 @@ import interior1 from "./img/interior/interior7.jpg";
 import gelaender1 from "./img/gelaender.JPG";
 import metal1 from "./img/metal.JPG";
 import { Helmet } from "react-helmet";
+import "vanilla-cookieconsent/dist/cookieconsent.css";
+import * as CookieConsent from "vanilla-cookieconsent";
 window.process = process;
 
 require("dotenv").config();
@@ -124,6 +126,102 @@ const Home = () => {
 };
 
 const App = () => {
+  const [gaConsent, setGaConsent] = useState(false);
+
+  useEffect(() => {
+    if (gaConsent) {
+      loadGA4();
+    }
+  }, [gaConsent]);
+
+  useEffect(() => {
+    CookieConsent.run({
+      autoclear_cookies: true,
+      theme_css:
+        "https://cdn.jsdelivr.net/npm/vanilla-cookieconsent@3.0.1/dist/themes/dark.min.css",
+      categories: {
+        necessary: {
+          enabled: true,
+          readOnly: true,
+        },
+        analytics: {},
+      },
+      language: {
+        default: "da",
+        translations: {
+          da: {
+            consentModal: {
+              title: "Vi bruger cookies!",
+              description:
+                "Vores website anvender essentielle cookies for at sikre korrekt drift og tracking cookies for at forstå, hvordan du interagerer med det. Tracking aktiveres kun med dit udtrykkelige samtykke.",
+              acceptAllBtn: "Accepter alle",
+              acceptNecessaryBtn: "Afvis alle",
+              showPreferencesBtn: "Cookieindstillinger",
+            },
+            preferencesModal: {
+              title: "Cookieindstillinger",
+              acceptAllBtn: "Accepter alle",
+              acceptNecessaryBtn: "Afvis alle",
+              savePreferencesBtn: "Gem indstillinger",
+              closeIconLabel: "Luk vindue",
+              sections: [
+                {
+                  title: "Strengt nødvendige cookies",
+                  description:
+                    "Disse cookies er essentielle for, at websitet kan fungere korrekt og kan ikke deaktiveres.",
+                  linkedCategory: "necessary",
+                },
+                {
+                  title: "Performance og Analyse",
+                  description:
+                    "Disse cookies, inklusive Google Analytics 4, indsamler information om, hvordan du bruger vores website. Alle data er anonymiseret og kan ikke bruges til at identificere dig.",
+                  linkedCategory: "analytics",
+                },
+                {
+                  title: "Mere information",
+                  description:
+                    "For spørgsmål vedrørende vores cookiepolitik og dine valgmuligheder, venligst kontakt os, eller tjek vores privatlivspolitik.",
+                },
+              ],
+            },
+          },
+        },
+      },
+      onAccept: () => {
+        console.log("Cookies accepted, setting GA consent to true.");
+        localStorage.setItem("gaConsent", "true");
+        setGaConsent(true);
+      },
+      onReject: () => {
+        console.log("Cookies rejected, setting GA consent to false.");
+        localStorage.setItem("gaConsent", "false");
+        setGaConsent(false);
+      },
+    });
+  }, []);
+
+  const loadGA4 = () => {
+    console.log("Loading GA4 script...");
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({
+      "gtm.start": new Date().getTime(),
+      event: "gtm.js",
+    });
+
+    const scriptUrl = document.createElement("script");
+    scriptUrl.src = "https://www.googletagmanager.com/gtag/js?id=G-6X2HJHK7S1";
+    scriptUrl.async = true;
+    document.head.appendChild(scriptUrl);
+
+    scriptUrl.onload = () => {
+      window.gtag = function () {
+        window.dataLayer.push(arguments);
+      };
+      window.gtag("js", new Date());
+      window.gtag("config", "G-6X2HJHK7S1", { anonymize_ip: true });
+    };
+  };
+
   return (
     <Router>
       <Routes>
