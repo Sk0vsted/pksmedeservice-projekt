@@ -1,21 +1,21 @@
-import React, { useEffect, useRef } from "react";
-import Header from "../components/header";
-import TitleBreak from "../components/titleBreak";
-import Description from "../components/description";
-import Pauimg from "../img/pau.jpg";
-import { Link } from "react-router-dom";
-import Card from "../components/card";
-import interior1 from "../img/interior/interior7.jpg";
-import gelaender1 from "../img/gelaender.JPG";
-import metal1 from "../img/metal.JPG";
-import { Helmet } from "react-helmet";
+import React, { useEffect, useRef } from 'react';
+import Header from '../components/header';
+import TitleBreak from '../components/titleBreak';
+import Description from '../components/description';
+import Pauimg from '../img/pau.jpg';
+import { Link } from 'react-router-dom';
+import Card from '../components/card';
+import interior1 from '../img/interior/interior7.jpg';
+import gelaender1 from '../img/gelaender.JPG';
+import metal1 from '../img/metal.JPG';
+import { Helmet } from 'react-helmet';
 
 const OmOs = () => {
   const textRef = useRef();
 
   useEffect(() => {
     if (textRef.current) {
-      textRef.current.classList.add("fadeIn");
+      textRef.current.classList.add('fadeIn');
     }
   }, []);
 
@@ -30,12 +30,12 @@ const OmOs = () => {
       </Helmet>
       <Header />
       <TitleBreak
-        title={"Om os"}
-        subtitle={"Hvem er vi?"}
-        titleColor={"text-light"}
-        subtitleColor={"text-gray-400"}
+        title={'Om os'}
+        subtitle={'Hvem er vi?'}
+        titleColor={'text-light'}
+        subtitleColor={'text-gray-400'}
       />
-      <div className="py-12 px-4 lg:px-40 xl:px-80 px-20">
+      <div className="py-12 lg:px-40 xl:px-80 px-20">
         <h1 ref={textRef} className="font-roboto text-light text-3xl pb-12">
           Vi er PK Smedeservice ApS - og vi har øje for detaljen
         </h1>
@@ -68,7 +68,7 @@ const OmOs = () => {
           <img
             src={Pauimg}
             alt="Pau Kristiansen"
-            className="rounded-xl xl:w-2/4 lg:w-3/4 w-full"
+            className="rounded-xl xl:w-3/4 lg:w-3/4 w-full"
           />
           <p className="font-ubuntu text-light text-xl font-thin text-left pt-2">
             Pau Kristiansen, indehaver af PK Smedeservice ApS
@@ -76,14 +76,14 @@ const OmOs = () => {
         </div>
       </div>
       <TitleBreak
-        title={"Services"}
-        subtitle={"Hvad tilbyder vi?"}
-        bgClass={"bg-gray-100"}
-        titleColor={"text-dark"}
-        subtitleColor={"text-gray-400"}
+        title={'Services'}
+        subtitle={'Hvad tilbyder vi?'}
+        bgClass={'bg-gray-100'}
+        titleColor={'text-dark'}
+        subtitleColor={'text-gray-400'}
       />
 
-      <div className="cardWrapper flex justify-around md:px-16 bg-gray-100 flex-col sm:px-0 md:px-0 lg:flex-row">
+      <div className="cardWrapper flex justify-around md:px-16 bg-gray-100 flex-col sm:px-0  lg:flex-row">
         <Card
           title="Interiørarbejde"
           src={interior1}
