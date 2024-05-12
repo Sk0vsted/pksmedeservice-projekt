@@ -2,6 +2,10 @@ const sendgridMail = require('@sendgrid/mail');
 sendgridMail.setApiKey(process.env.REACT_APP_SENDGRID_API_KEY);
 
 module.exports = async (req, res) => {
+  res.setHeader('Access-Control-Allow-Origin', '*');
+  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
+  res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+
   if (req.method !== 'POST') {
     res.status(405).json({ error: 'Method Not Allowed' });
     return;
