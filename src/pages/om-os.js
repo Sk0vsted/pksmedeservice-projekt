@@ -35,7 +35,7 @@ const OmOs = () => {
         titleColor={'text-light'}
         subtitleColor={'text-gray-400'}
       />
-      <div className="py-12 lg:px-40 xl:px-80 px-20">
+      <div className="py-12 lg:px-40 xl:px-80 px-4">
         <h1 ref={textRef} className="font-roboto text-light text-3xl pb-12">
           Vi er PK Smedeservice ApS - og vi har øje for detaljen
         </h1>
@@ -70,7 +70,7 @@ const OmOs = () => {
             alt="Pau Kristiansen"
             className="rounded-xl xl:w-3/4 lg:w-3/4 w-full"
           />
-          <p className="font-ubuntu text-light text-xl font-thin text-left pt-2">
+          <p className="font-ubuntu text-light text-xl font-thin md:text-left text-center pt-2">
             Pau Kristiansen, indehaver af PK Smedeservice ApS
           </p>
         </div>
