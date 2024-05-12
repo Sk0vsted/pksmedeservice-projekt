@@ -1,8 +1,8 @@
-import React, { useEffect, useRef } from "react";
-import background from "../img/about.jpg";
-import Button from "./button";
-import { NavLink } from "react-router-dom";
-import "./css/about.css";
+import React, { useEffect, useRef } from 'react';
+import background from '../img/about.jpg';
+import Button from './button';
+import { NavLink } from 'react-router-dom';
+import './css/about.css';
 
 const About = () => {
   const aboutRef = useRef();
@@ -10,15 +10,15 @@ const About = () => {
   const checkScroll = () => {
     const rect = aboutRef.current.getBoundingClientRect();
     if (rect.top <= window.innerHeight) {
-      aboutRef.current.classList.add("show");
+      aboutRef.current.classList.add('show');
     }
   };
 
   useEffect(() => {
-    window.addEventListener("scroll", checkScroll);
+    window.addEventListener('scroll', checkScroll);
 
     return () => {
-      window.removeEventListener("scroll", checkScroll);
+      window.removeEventListener('scroll', checkScroll);
     };
   }, []);
 
@@ -27,9 +27,9 @@ const About = () => {
       className="about flex flex-col justify-center items-end px-0 lg:px-16 overflow-hidden"
       style={{
         backgroundImage: `url(${background})`,
-        backgroundSize: "cover",
-        backgroundPosition: "right",
-        height: "500px",
+        backgroundSize: 'cover',
+        backgroundPosition: 'right',
+        height: '500px',
       }}
     >
       <div
@@ -48,9 +48,7 @@ const About = () => {
         </p>
       </div>
       <div className="w-full pt-5 lg:pt-0 lg:w-auto lg:px-8 overflow-hidden">
-        <NavLink to="/om-os">
-          <Button label={"Om PK Smedeservice"} />
-        </NavLink>
+        <Button label={'Om PK Smedeservice'} to="/om-os" />
       </div>
     </div>
   );

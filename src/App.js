@@ -244,7 +244,7 @@ const App = () => {
                 {
                   title: 'Performance og Analyse',
                   description:
-                    'Denne cookie, som består af Google Analytics 4, indsamler information om, hvordan du bruger vores website. Alle data er anonymiseret og kan ikke bruges til at identificere dig.',
+                    'Disse cookies, som primært er indenfor Google Analytics 4, indsamler information om, hvordan du bruger vores website. Alle data er anonymiseret og kan ikke bruges til at identificere dig.',
                   linkedCategory: 'analytics',
                   cookieTable: {
                     caption: 'Liste af cookies',
