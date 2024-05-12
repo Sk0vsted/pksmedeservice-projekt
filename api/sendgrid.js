@@ -6,15 +6,14 @@ module.exports = async (req, res) => {
     return res.status(405).json({ error: 'Method Not Allowed' });
   }
 
-  // Collect data from the request
   let data = '';
   req.on('data', (chunk) => {
     data += chunk.toString(); // convert Buffer to string
   });
 
   req.on('end', async () => {
+    console.log(data); // Log the raw data received
     try {
-      // Parse the JSON data
       const body = JSON.parse(data);
 
       const { fornavn, efternavn, email, telefon, besked } = body;
