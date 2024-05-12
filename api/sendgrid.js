@@ -2,21 +2,22 @@ const sendgridMail = require('@sendgrid/mail');
 sendgridMail.setApiKey(process.env.REACT_APP_SENDGRID_API_KEY);
 
 module.exports = async (req, res) => {
-  // Ensure that we're dealing with a POST request
   if (req.method !== 'POST') {
     return res.status(405).json({ error: 'Method Not Allowed' });
   }
 
-  // Parse the JSON body manually
+  // Collect data from the request
   let data = '';
   req.on('data', (chunk) => {
-    data += chunk;
+    data += chunk.toString(); // convert Buffer to string
   });
 
   req.on('end', async () => {
     try {
-      const { fornavn, efternavn, email, telefon, besked } = JSON.parse(data);
+      // Parse the JSON data
+      const body = JSON.parse(data);
 
+      const { fornavn, efternavn, email, telefon, besked } = body;
       const content = {
         to: 'pau@pksmedeservice.dk',
         from: 'pksmedeservice.kontakt@gmail.com',
