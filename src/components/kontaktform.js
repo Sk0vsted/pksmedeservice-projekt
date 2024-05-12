@@ -24,7 +24,7 @@ const KontaktForm = ({ onFormSubmit }) => {
 
     try {
       const res = await axios.post(
-        'https://pksmedeservice.dk/api/sendgrid',
+        'https://pksmedeserviceaps-projekt.vercel.app/api/sendgrid',
         data
       );
       console.log('Email sent:', res.data);
