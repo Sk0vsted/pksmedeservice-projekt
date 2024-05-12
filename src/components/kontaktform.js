@@ -25,7 +25,7 @@ const KontaktForm = ({ onFormSubmit }) => {
     try {
       const res = await axios.post(
         'https://pksmedeservice.dk/api/sendgrid',
-        data,
+        JSON.stringify(data),
         {
           headers: {
             'Content-Type': 'application/json',
