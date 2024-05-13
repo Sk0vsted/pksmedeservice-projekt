@@ -11,14 +11,19 @@
   ],
   "routes": [
     {
-      "src": "/api/(.*)",
-      "dest": "/api/$1.js",
+      "src": "/api/sendgrid",
+      "dest": "/api/sendgrid.js",
       "methods": ["POST", "OPTIONS"],
       "headers": {
         "Access-Control-Allow-Origin": "*",
         "Access-Control-Allow-Methods": "POST, OPTIONS",
         "Access-Control-Allow-Headers": "Content-Type, Authorization"
       }
+    },
+    {
+      "src": "/api/images",
+      "dest": "/api/images.js",
+      "methods": ["POST", "OPTIONS", "GET"]
     },
     {
       "src": "/(.*)",
