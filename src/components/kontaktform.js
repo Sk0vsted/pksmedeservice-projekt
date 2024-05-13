@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import axios from "axios";
 import "./css/kontaktform.css";
 import ReCAPTCHA from "react-google-recaptcha";
-// 6LfsStspAAAAAOqmNnbEKoMpRj03xmSnnbsJkuUW
 
 const KontaktForm = ({ onFormSubmit }) => {
   const [submitted, setSubmitted] = useState(false);
@@ -12,6 +11,7 @@ const KontaktForm = ({ onFormSubmit }) => {
     email: "",
     telefon: "",
     besked: "",
+    token: "",
   });
 
   const handleSubmit = async (e) => {
@@ -23,6 +23,7 @@ const KontaktForm = ({ onFormSubmit }) => {
       email: e.target.email.value,
       telefon: e.target.telefon.value,
       besked: e.target.besked.value,
+      token: e.target.token.value,
     };
 
     try {
@@ -43,7 +44,6 @@ const KontaktForm = ({ onFormSubmit }) => {
         email: "",
         telefon: "",
         besked: "",
-        token: token,
       });
       onFormSubmit();
     } catch (error) {
