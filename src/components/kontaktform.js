@@ -118,7 +118,7 @@ const KontaktForm = ({ onFormSubmit }) => {
             ></textarea>
             <div className="pt-5"></div>
             <ReCAPTCHA
-              sitekey="6LdJzr8bAAAAAOb4K4oYv1y9Zm7G4k2jZQ7Q0j3E"
+              sitekey="6LfsStspAAAAAOqmNnbEKoMpRj03xmSnnbsJkuUW"
               onChange={handleCaptchaChange}
             />
             <button
