@@ -14,6 +14,10 @@ const KontaktForm = ({ onFormSubmit }) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    const token = await grecaptcha.enterprise.execute(
+      "6LduFdspAAAAAPqtjdhTsshyYBRFGTAtmKRAmlp-",
+      { action: "submit" }
+    );
     const data = {
       fornavn: e.target.fornavn.value,
       efternavn: e.target.efternavn.value,
@@ -40,6 +44,7 @@ const KontaktForm = ({ onFormSubmit }) => {
         email: "",
         telefon: "",
         besked: "",
+        token: token,
       });
       onFormSubmit();
     } catch (error) {
@@ -102,6 +107,7 @@ const KontaktForm = ({ onFormSubmit }) => {
             <div className="pt-5"></div>
             <button
               type="submit"
+              id="submit-btn"
               className="form-control submit w-4/5 lg:w-3/6 border-2 border-primary text-light text-lg py-2 px-6 rounded-full relative hover:drop-shadow-xl hover:bg-primary hover:cursor-pointer hover:text-light 
             hover:text-transform transition duration-300 font-ubuntu ease-in-out mt-9"
             >
