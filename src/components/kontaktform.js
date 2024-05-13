@@ -11,6 +11,8 @@ const KontaktForm = ({ onFormSubmit }) => {
     telefon: '',
     besked: '',
   });
+  const [loading, setLoading] = useState(false); // State to manage loading
+  const [error, setError] = useState(null); // State to manage error
 
   const handleSubmit = async (e) => {
     e.preventDefault();
