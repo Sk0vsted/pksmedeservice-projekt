@@ -14,12 +14,9 @@
     "buffer": "^6.0.3",
     "cloudinary": "^2.2.0",
     "cloudinary-react": "^1.8.1",
-    "crypto-browserify": "^3.12.0",
     "dotenv": "^16.4.4",
     "framer-motion": "^10.16.4",
     "hamburger-react": "^2.5.0",
-    "os-browserify": "^0.3.0",
-    "path-browserify": "^1.0.1",
     "photoswipe-dynamic-caption-plugin": "^1.2.7",
     "process": "^0.11.10",
     "react": "^18.2.0",
@@ -70,6 +67,9 @@
     ]
   },
   "devDependencies": {
+    "crypto-browserify": "^3.12.0",
+    "os-browserify": "^0.3.0",
+    "path-browserify": "^1.0.1",
     "react-app-rewired": "^2.2.1"
   }
 }
