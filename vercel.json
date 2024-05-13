@@ -1,0 +1,28 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "package.json",
+      "use": "@vercel/static-build",
+      "config": {
+        "distDir": "build"
+      }
+    }
+  ],
+  "routes": [
+    {
+      "src": "/api/sendgrid",
+      "methods": ["POST", "OPTIONS"],
+      "dest": "/api/sendgrid.js"
+    },
+    {
+      "src": "/api/images",
+      "methods": ["GET", "POST"],
+      "dest": "/api/images.js"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/build/index.html"
+    }
+  ]
+}
