@@ -11,19 +11,22 @@ const KontaktForm = ({ onFormSubmit }) => {
     email: "",
     telefon: "",
     besked: "",
-    token: "",
   });
+  const [isCaptchaValid, setIsCaptchaValid] = useState(false);
+
+  const handleCaptchaChange = (value) => {
+    setIsCaptchaValid(value !== null);
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
     const data = {
-      fornavn: e.target.fornavn.value,
-      efternavn: e.target.efternavn.value,
-      email: e.target.email.value,
-      telefon: e.target.telefon.value,
-      besked: e.target.besked.value,
-      token: e.target.token.value,
+      fornavn: formData.fornavn,
+      efternavn: formData.efternavn,
+      email: formData.email,
+      telefon: formData.telefon,
+      besked: formData.besked,
     };
 
     try {
@@ -68,6 +71,8 @@ const KontaktForm = ({ onFormSubmit }) => {
               type="text"
               name="fornavn"
               placeholder="Fornavn"
+              value={formData.fornavn}
+              onChange={handleChange}
               className="form-control w-4/5 lg:w-3/6 border-2 p-2 mb-5 focus:border-orange rounded-lg"
               required
             />
@@ -76,6 +81,8 @@ const KontaktForm = ({ onFormSubmit }) => {
               type="text"
               name="efternavn"
               placeholder="Efternavn"
+              value={formData.efternavn}
+              onChange={handleChange}
               className="form-control w-4/5 lg:w-3/6 border-2 p-2 mb-5 focus:border-orange rounded-lg"
               required
             />
@@ -84,6 +91,8 @@ const KontaktForm = ({ onFormSubmit }) => {
               type="email"
               name="email"
               placeholder="Email"
+              value={formData.email}
+              onChange={handleChange}
               className="form-control w-4/5 lg:w-3/6 border-2 p-2 mb-5 focus:border-orange rounded-lg"
               required
             />
@@ -92,6 +101,8 @@ const KontaktForm = ({ onFormSubmit }) => {
               type="text"
               name="telefon"
               placeholder="Telefon"
+              value={formData.telefon}
+              onChange={handleChange}
               className="form-control w-4/5 lg:w-3/6 border-2 p-2 mb-10 focus:border-orange rounded-lg"
               required
             />
@@ -99,19 +110,22 @@ const KontaktForm = ({ onFormSubmit }) => {
             <textarea
               name="besked"
               placeholder="Besked"
+              value={formData.besked}
+              onChange={handleChange}
               className="form-control w-4/5 lg:w-3/6 border-2 p-2 focus:border-orange rounded-lg"
               rows="5"
               required
             ></textarea>
             <div className="pt-5"></div>
             <ReCAPTCHA
-              sitekey="6LfsStspAAAAAOqmNnbEKoMpRj03xmSnnbsJkuUW"
-              onChange={(token) => setFormData({ ...formData, token })}
+              sitekey="6LdJzr8bAAAAAOb4K4oYv1y9Zm7G4k2jZQ7Q0j3E"
+              onChange={handleCaptchaChange}
             />
             <button
               type="submit"
               className="form-control submit w-4/5 lg:w-3/6 border-2 border-primary text-light text-lg py-2 px-6 rounded-full relative hover:drop-shadow-xl hover:bg-primary hover:cursor-pointer hover:text-light 
             hover:text-transform transition duration-300 font-ubuntu ease-in-out mt-9"
+              disabled={!isCaptchaValid}
             >
               Send besked
             </button>
