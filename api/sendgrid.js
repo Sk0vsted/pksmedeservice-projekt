@@ -2,7 +2,6 @@ const sendgridMail = require("@sendgrid/mail");
 sendgridMail.setApiKey(process.env.REACT_APP_SENDGRID_API_KEY);
 
 module.exports = async (req, res) => {
-  res.status(200).json({ message: "SendGrid API is working!" });
   // Set CORS headers
   res.setHeader("Access-Control-Allow-Origin", "*");
   res.setHeader("Access-Control-Allow-Methods", "GET, POST, OPTIONS");

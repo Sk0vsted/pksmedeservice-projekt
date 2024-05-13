@@ -7,7 +7,6 @@ cloudinary.config({
 });
 
 module.exports = async (req, res) => {
-  res.status(200).json({ message: "Images API is working!" });
   const selectedFolder = req.query.folder;
 
   try {
