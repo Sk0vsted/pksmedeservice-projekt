@@ -103,7 +103,7 @@ const KontaktForm = ({ onFormSubmit }) => {
             <button
               type="submit"
               className="form-control submit w-4/5 lg:w-3/6 border-2 border-primary text-light text-lg py-2 px-6 rounded-full relative hover:drop-shadow-xl hover:bg-primary hover:cursor-pointer hover:text-light 
-            hover:text-transform transition duration-300 font-ubuntu ease-in-out mt-10"
+            hover:text-transform transition duration-300 font-ubuntu ease-in-out mt-9"
             >
               Send besked
             </button>
