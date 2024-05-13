@@ -1,19 +1,22 @@
-import React, { useState } from "react";
-import axios from "axios";
-import "./css/kontaktform.css";
+import React, { useState } from 'react';
+import axios from 'axios';
+import './css/kontaktform.css';
 
 const KontaktForm = ({ onFormSubmit }) => {
   const [submitted, setSubmitted] = useState(false);
   const [formData, setFormData] = useState({
-    fornavn: "",
-    efternavn: "",
-    email: "",
-    telefon: "",
-    besked: "",
+    fornavn: '',
+    efternavn: '',
+    email: '',
+    telefon: '',
+    besked: '',
   });
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setLoading(true);
+    setError(null);
+
     const data = {
       fornavn: e.target.fornavn.value,
       efternavn: e.target.efternavn.value,
@@ -24,27 +27,29 @@ const KontaktForm = ({ onFormSubmit }) => {
 
     try {
       const res = await axios.post(
-        "https://pksmedeservice.dk/api/sendgrid",
+        'https://pksmedeservicebackend.vercel.app/api/sendgrid',
         data,
         {
           headers: {
-            "Content-Type": "application/json",
+            'Content-Type': 'application/json',
           },
         }
       );
-      console.log("Email sent:", res.data);
+      console.log('Email sent:', res.data);
       setSubmitted(true);
       setFormData({
-        fornavn: "",
-        efternavn: "",
-        email: "",
-        telefon: "",
-        besked: "",
+        fornavn: '',
+        efternavn: '',
+        email: '',
+        telefon: '',
+        besked: '',
       });
       onFormSubmit();
     } catch (error) {
-      console.log("Error:", error);
+      console.error('Error:', error);
+      setError('Failed to send message. Please try again.');
     }
+    setLoading(false);
   };
 
   const handleChange = (e) => {
@@ -54,7 +59,7 @@ const KontaktForm = ({ onFormSubmit }) => {
   return (
     <section
       className={`w-full flex justify-center pt-12 font-roboto pb-12 ${
-        submitted ? "fade-out" : ""
+        submitted ? 'fade-out' : ''
       }`}
     >
       <div className="contact-form flex justify-center w-full">
