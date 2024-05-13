@@ -1,15 +1,15 @@
-import React, { useState } from 'react';
-import axios from 'axios';
-import './css/kontaktform.css';
+import React, { useState } from "react";
+import axios from "axios";
+import "./css/kontaktform.css";
 
 const KontaktForm = ({ onFormSubmit }) => {
   const [submitted, setSubmitted] = useState(false);
   const [formData, setFormData] = useState({
-    fornavn: '',
-    efternavn: '',
-    email: '',
-    telefon: '',
-    besked: '',
+    fornavn: "",
+    efternavn: "",
+    email: "",
+    telefon: "",
+    besked: "",
   });
 
   const handleSubmit = async (e) => {
@@ -24,21 +24,26 @@ const KontaktForm = ({ onFormSubmit }) => {
 
     try {
       const res = await axios.post(
-        'https://pksmedeservice.dk/api/sendgrid',
-        data
+        "https://pksmedeservice.dk/api/sendgrid",
+        data,
+        {
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
       );
-      console.log('Email sent:', res.data);
+      console.log("Email sent:", res.data);
       setSubmitted(true);
       setFormData({
-        fornavn: '',
-        efternavn: '',
-        email: '',
-        telefon: '',
-        besked: '',
+        fornavn: "",
+        efternavn: "",
+        email: "",
+        telefon: "",
+        besked: "",
       });
       onFormSubmit();
     } catch (error) {
-      console.log('Error:', error);
+      console.log("Error:", error);
     }
   };
 
@@ -49,7 +54,7 @@ const KontaktForm = ({ onFormSubmit }) => {
   return (
     <section
       className={`w-full flex justify-center pt-12 font-roboto pb-12 ${
-        submitted ? 'fade-out' : ''
+        submitted ? "fade-out" : ""
       }`}
     >
       <div className="contact-form flex justify-center w-full">

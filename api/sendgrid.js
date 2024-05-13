@@ -18,6 +18,14 @@ module.exports = async (req, res) => {
     return;
   }
 
+  let body;
+  try {
+    body = JSON.parse(req.body);
+  } catch (error) {
+    res.status(400).json({ error: "Invalid JSON" });
+    return;
+  }
+
   const { fornavn, efternavn, email, telefon, besked } = req.body;
 
   const content = {
