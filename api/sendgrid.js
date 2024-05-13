@@ -1,7 +1,7 @@
 const sendgridMail = require("@sendgrid/mail");
 sendgridMail.setApiKey(process.env.REACT_APP_SENDGRID_API_KEY);
 
-module.exports = async (req, res) => {
+const allowCors = (fn) => async (req, res) => {
   // Set CORS headers
   res.setHeader("Access-Control-Allow-Origin", "*");
   res.setHeader("Access-Control-Allow-Methods", "GET, POST, OPTIONS");
@@ -13,6 +13,10 @@ module.exports = async (req, res) => {
     return;
   }
 
+  return await fn(req, res);
+};
+
+const sendEmail = async (req, res) => {
   if (req.method !== "POST") {
     res.status(405).json({ error: "Method Not Allowed" });
     return;
@@ -45,3 +49,5 @@ module.exports = async (req, res) => {
       .json({ error: "Error sending email", details: error.toString() });
   }
 };
+
+module.exports = allowCors(sendEmail);
