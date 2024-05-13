@@ -2,15 +2,18 @@
   "version": 2,
   "builds": [
     {
-      "src": "./src/index.js",
-      "use": "@vercel/node"
+      "src": "package.json",
+      "use": "@vercel/static-build",
+      "config": {
+        "distDir": "build"
+      }
     }
   ],
   "routes": [
     {
-      "src": "/api/sendgrid",
+      "src": "/api/(.*)",
+      "dest": "/api/$1.js",
       "methods": ["POST", "OPTIONS"],
-      "dest": "/src/index.js",
       "headers": {
         "Access-Control-Allow-Origin": "*",
         "Access-Control-Allow-Methods": "POST, OPTIONS",
@@ -19,7 +22,7 @@
     },
     {
       "src": "/(.*)",
-      "dest": "/src/index.js"
+      "dest": "/build/index.html"
     }
   ]
 }
