@@ -1,57 +1,58 @@
-import React, { useState } from "react";
-import axios from "axios";
-import "./css/kontaktform.css";
-import ReCAPTCHA from "react-google-recaptcha";
+import React, { useState } from 'react';
+import axios from 'axios';
+import './css/kontaktform.css';
 
 const KontaktForm = ({ onFormSubmit }) => {
   const [submitted, setSubmitted] = useState(false);
   const [formData, setFormData] = useState({
-    fornavn: "",
-    efternavn: "",
-    email: "",
-    telefon: "",
-    besked: "",
+    fornavn: '',
+    efternavn: '',
+    email: '',
+    telefon: '',
+    besked: '',
   });
-  const [isCaptchaValid, setIsCaptchaValid] = useState(false);
-
-  const handleCaptchaChange = (value) => {
-    setIsCaptchaValid(value !== null);
-  };
+  const [loading, setLoading] = useState(false); // State to manage loading
+  const [error, setError] = useState(null); // State to manage error
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setLoading(true);
+    setError(null);
 
     const data = {
-      fornavn: formData.fornavn,
-      efternavn: formData.efternavn,
-      email: formData.email,
-      telefon: formData.telefon,
-      besked: formData.besked,
+      fornavn: e.target.fornavn.value,
+      efternavn: e.target.efternavn.value,
+      email: e.target.email.value,
+      telefon: e.target.telefon.value,
+      besked: e.target.besked.value,
     };
 
     try {
       const res = await axios.post(
-        "https://pksmedeservice.dk/api/sendgrid",
+        'https://pksmedeservicebackend.vercel.app/api/sendgrid',
         data,
         {
           headers: {
-            "Content-Type": "application/json",
+            'Content-Type': 'application/json',
           },
         }
       );
-      console.log("Email sent:", res.data);
+
+      console.log('Email sent:', res.data);
       setSubmitted(true);
       setFormData({
-        fornavn: "",
-        efternavn: "",
-        email: "",
-        telefon: "",
-        besked: "",
+        fornavn: '',
+        efternavn: '',
+        email: '',
+        telefon: '',
+        besked: '',
       });
       onFormSubmit();
     } catch (error) {
-      console.log("Error:", error);
+      console.error('Error:', error);
+      setError('Failed to send message. Please try again.');
     }
+    setLoading(false);
   };
 
   const handleChange = (e) => {
@@ -61,7 +62,7 @@ const KontaktForm = ({ onFormSubmit }) => {
   return (
     <section
       className={`w-full flex justify-center pt-12 font-roboto pb-12 ${
-        submitted ? "fade-out" : ""
+        submitted ? 'fade-out' : ''
       }`}
     >
       <div className="contact-form flex justify-center w-full">
@@ -71,8 +72,6 @@ const KontaktForm = ({ onFormSubmit }) => {
               type="text"
               name="fornavn"
               placeholder="Fornavn"
-              value={formData.fornavn}
-              onChange={handleChange}
               className="form-control w-4/5 lg:w-3/6 border-2 p-2 mb-5 focus:border-orange rounded-lg"
               required
             />
@@ -81,8 +80,6 @@ const KontaktForm = ({ onFormSubmit }) => {
               type="text"
               name="efternavn"
               placeholder="Efternavn"
-              value={formData.efternavn}
-              onChange={handleChange}
               className="form-control w-4/5 lg:w-3/6 border-2 p-2 mb-5 focus:border-orange rounded-lg"
               required
             />
@@ -91,8 +88,6 @@ const KontaktForm = ({ onFormSubmit }) => {
               type="email"
               name="email"
               placeholder="Email"
-              value={formData.email}
-              onChange={handleChange}
               className="form-control w-4/5 lg:w-3/6 border-2 p-2 mb-5 focus:border-orange rounded-lg"
               required
             />
@@ -101,8 +96,6 @@ const KontaktForm = ({ onFormSubmit }) => {
               type="text"
               name="telefon"
               placeholder="Telefon"
-              value={formData.telefon}
-              onChange={handleChange}
               className="form-control w-4/5 lg:w-3/6 border-2 p-2 mb-10 focus:border-orange rounded-lg"
               required
             />
@@ -110,22 +103,15 @@ const KontaktForm = ({ onFormSubmit }) => {
             <textarea
               name="besked"
               placeholder="Besked"
-              value={formData.besked}
-              onChange={handleChange}
               className="form-control w-4/5 lg:w-3/6 border-2 p-2 focus:border-orange rounded-lg"
               rows="5"
               required
             ></textarea>
             <div className="pt-5"></div>
-            <ReCAPTCHA
-              sitekey="6LfsStspAAAAAOqmNnbEKoMpRj03xmSnnbsJkuUW"
-              onChange={handleCaptchaChange}
-            />
             <button
               type="submit"
               className="form-control submit w-4/5 lg:w-3/6 border-2 border-primary text-light text-lg py-2 px-6 rounded-full relative hover:drop-shadow-xl hover:bg-primary hover:cursor-pointer hover:text-light 
             hover:text-transform transition duration-300 font-ubuntu ease-in-out mt-9"
-              disabled={!isCaptchaValid}
             >
               Send besked
             </button>
