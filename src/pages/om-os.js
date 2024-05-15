@@ -1,21 +1,21 @@
-import React, { useEffect, useRef } from 'react';
-import Header from '../components/header';
-import TitleBreak from '../components/titleBreak';
-import Description from '../components/description';
-import Pauimg from '../img/pau.jpg';
-import { Link } from 'react-router-dom';
-import Card from '../components/card';
-import interior1 from '../img/interior/interior7.jpg';
-import gelaender1 from '../img/gelaender.JPG';
-import metal1 from '../img/metal.JPG';
-import { Helmet } from 'react-helmet';
+import React, { useEffect, useRef } from "react";
+import Header from "../components/header";
+import TitleBreak from "../components/titleBreak";
+import Description from "../components/description";
+import Pauimg from "../img/pau.jpg";
+import { Link } from "react-router-dom";
+import Card from "../components/card";
+import interior1 from "../img/interior/interior7.jpg";
+import gelaender1 from "../img/gelaender.JPG";
+import metal1 from "../img/metal.JPG";
+import { Helmet } from "react-helmet";
 
 const OmOs = () => {
   const textRef = useRef();
 
   useEffect(() => {
     if (textRef.current) {
-      textRef.current.classList.add('fadeIn');
+      textRef.current.classList.add("fadeIn");
     }
   }, []);
 
@@ -30,10 +30,10 @@ const OmOs = () => {
       </Helmet>
       <Header />
       <TitleBreak
-        title={'Om os'}
-        subtitle={'Hvem er vi?'}
-        titleColor={'text-light'}
-        subtitleColor={'text-gray-400'}
+        title={"Om os"}
+        subtitle={"Hvem er vi?"}
+        titleColor={"text-light"}
+        subtitleColor={"text-gray-400"}
       />
       <div className="py-12 lg:px-40 xl:px-80 px-4">
         <h1 ref={textRef} className="font-roboto text-light text-3xl pb-12">
@@ -76,11 +76,11 @@ const OmOs = () => {
         </div>
       </div>
       <TitleBreak
-        title={'Services'}
-        subtitle={'Hvad tilbyder vi?'}
-        bgClass={'bg-gray-100'}
-        titleColor={'text-dark'}
-        subtitleColor={'text-gray-400'}
+        title={"Services"}
+        subtitle={"Hvad tilbyder vi?"}
+        bgClass={"bg-gray-100"}
+        titleColor={"text-dark"}
+        subtitleColor={"text-gray-400"}
       />
 
       <div className="cardWrapper flex justify-around md:px-16 bg-gray-100 flex-col sm:px-0  lg:flex-row">
@@ -90,6 +90,7 @@ const OmOs = () => {
           description="Vi laver alt inden for interiørarbejde. Vi har 18 års erfaring og kan hjælpe dig med at skabe det perfekte interiør til dit hjem eller din virksomhed."
           buttonLabel="Se mere"
           to="/interiorarbejde"
+          alt={"sort new yorker parti som rumdeler, både vindue og dør"}
         />
 
         <Card
@@ -98,6 +99,7 @@ const OmOs = () => {
           description="Står du og mangler en smed til at lave noget indenfor metal, både rustfrit og alm. stål, så er vi klar til at hjælpe dig. Vi kan lave alt fra små til store opgaver."
           buttonLabel="Se mere"
           to="/metal-og-rustfrit"
+          alt={"udendørs bed lavet af metal, foran et stort glasvindue"}
         />
 
         <Card
@@ -106,6 +108,7 @@ const OmOs = () => {
           description="Ønsker du at få lavet en ny altan eller et nyt gelænder? Vi kan skabe et skrædersyet design, der er præcis, som du ønsker det, og vi kan hjælpe dig med at få det monteret."
           buttonLabel="Se mere"
           to="/gelaendere-og-altaner"
+          alt={"gelænder i metal med træhåndliste, forbundet til en træ-trappe"}
         />
       </div>
     </div>

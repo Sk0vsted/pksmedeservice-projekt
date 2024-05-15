@@ -90,6 +90,7 @@ const Home = () => {
           description="Vi laver alt inden for interiørarbejde. Vi har 18 års erfaring og kan hjælpe dig med at skabe det perfekte interiør til dit hjem eller din virksomhed."
           buttonLabel="Se mere"
           to="/interiorarbejde"
+          alt={"sort new yorker parti som rumdeler, både vindue og dør"}
         />
 
         <Card
@@ -98,6 +99,7 @@ const Home = () => {
           description="Står du og mangler en smed til at lave noget indenfor metal, både rustfrit og alm. stål, så er vi klar til at hjælpe dig. Vi kan lave alt fra små til store opgaver."
           buttonLabel="Se mere"
           to="/metal-og-rustfrit"
+          alt={"udendørs bed lavet af metal, foran et stort glasvindue"}
         />
 
         <Card
@@ -106,6 +108,7 @@ const Home = () => {
           description="Ønsker du at få lavet en ny altan eller et nyt gelænder? Vi kan skabe et skrædersyet design, der er præcis, som du ønsker det, og vi kan hjælpe dig med at få det monteret."
           buttonLabel="Se mere"
           to="/gelaendere-og-altaner"
+          alt={"gelænder i metal med træhåndliste, forbundet til en træ-trappe"}
         />
       </div>
 

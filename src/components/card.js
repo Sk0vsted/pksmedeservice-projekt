@@ -36,7 +36,7 @@ const Card = ({
         <div className="image-container">
           <img
             src={src}
-            alt={{ placeholder }}
+            alt={{ alt }}
             style={{
               width: 350,
               borderTopLeftRadius: 10,

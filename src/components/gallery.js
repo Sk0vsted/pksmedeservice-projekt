@@ -1,16 +1,16 @@
-import React, { useEffect, useRef } from 'react';
-import SmartSlider from 'react-smart-slider';
-import './css/gallery.css';
-import gallery1 from '../img/gallery1.png';
-import gallery2 from '../img/gallery2.png';
-import gallery3 from '../img/gallery3.png';
-import gallery4 from '../img/gallery4.png';
-import gallery5 from '../img/gallery5.png';
-import gallery6 from '../img/gallery6.png';
-import gallery7 from '../img/gallery7.png';
-import gallery8 from '../img/gallery8.png';
-import Button from './button.js';
-import { NavLink } from 'react-router-dom';
+import React, { useEffect, useRef } from "react";
+import SmartSlider from "react-smart-slider";
+import "./css/gallery.css";
+import gallery1 from "../img/gallery1.png";
+import gallery2 from "../img/gallery2.png";
+import gallery3 from "../img/gallery3.png";
+import gallery4 from "../img/gallery4.png";
+import gallery5 from "../img/gallery5.png";
+import gallery6 from "../img/gallery6.png";
+import gallery7 from "../img/gallery7.png";
+import gallery8 from "../img/gallery8.png";
+import Button from "./button.js";
+import { NavLink } from "react-router-dom";
 
 function SlideShow() {
   const slidesArray = [
@@ -45,23 +45,23 @@ function SlideShow() {
   const checkScroll = () => {
     const rect = slideShowRef.current.getBoundingClientRect();
     if (rect.top <= window.innerHeight) {
-      slideShowRef.current.classList.add('show');
+      slideShowRef.current.classList.add("show");
     }
   };
 
   useEffect(() => {
-    window.addEventListener('scroll', checkScroll);
+    window.addEventListener("scroll", checkScroll);
 
     return () => {
-      window.removeEventListener('scroll', checkScroll);
+      window.removeEventListener("scroll", checkScroll);
     };
   }, []);
 
   useEffect(() => {
-    const slideContents = document.querySelectorAll('.slideContent');
+    const slideContents = document.querySelectorAll(".slideContent");
 
     slideContents.forEach((slide) => {
-      slide.style.backgroundSize = 'contain';
+      slide.style.backgroundSize = "contain";
     });
   }, []);
 
@@ -77,7 +77,7 @@ function SlideShow() {
         </p>
         <NavLink to="/galleri">
           <div className="hideSmall showBig">
-            <Button label={'Se flere billeder'} to="/galleri" />
+            <Button label={"Se flere billeder"} to="/galleri" />
           </div>
         </NavLink>
       </div>
@@ -93,7 +93,7 @@ function SlideShow() {
           />
         </div>
         <div className="showSmall hideBig mt-5 lg:mt-0">
-          <Button label={'Se flere billeder'} to="/galleri" />
+          <Button label={"Se flere billeder"} to="/galleri" />
         </div>
       </div>
     </div>
