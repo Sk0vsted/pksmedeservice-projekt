@@ -79,6 +79,7 @@ const Interiørarbejde = () => {
           hashtag2={"#new-yorker"}
           hashtag3={"#nyt-hus"}
           bgColor={"bg-light"}
+          alt={"newyorker dør i sort"}
         />
         <CardItem
           title={"Bruse væg med dør"}
@@ -90,6 +91,7 @@ const Interiørarbejde = () => {
           hashtag2={"#nano-behandling"}
           hashtag3={"#badeværelse"}
           bgColor={"bg-light"}
+          alt={"brusevæg med dør ind til brusekabine"}
         />
         <CardItem
           title={"Glaspartier til vin rum"}
@@ -101,6 +103,7 @@ const Interiørarbejde = () => {
           hashtag2={"#glaspartier"}
           hashtag3={"#inspiration"}
           bgColor={"bg-light"}
+          alt={"glasparti til vinrum, beliggende ved siden af et køkken"}
         />
         <CardItem
           title={"Skydedør med glas til køkken alrum"}
@@ -112,6 +115,7 @@ const Interiørarbejde = () => {
           hashtag2={"#new-yorker"}
           hashtag3={"#indretning"}
           bgColor={"bg-light"}
+          alt={"skydedør med glas til køkken alrum"}
         />
       </div>
 
@@ -126,6 +130,9 @@ const Interiørarbejde = () => {
           hashtag2={"#indretning"}
           hashtag3={"#muligheder"}
           bgColor={"bg-light"}
+          alt={
+            "new yorker parti under trappe med vaskemaskine bagved tonet glas"
+          }
         />
         <CardItem
           title={"Special designet spejl"}
@@ -137,6 +144,7 @@ const Interiørarbejde = () => {
           hashtag2={"#unikt"}
           hashtag3={"#inspiration"}
           bgColor={"bg-light"}
+          alt={"special designet spejl i metalramme"}
         />
         <CardItem
           title={"Helt almindelig dør, udskiftet med en New Yorker dør"}
@@ -148,6 +156,7 @@ const Interiørarbejde = () => {
           hashtag2={"#new-yorker"}
           hashtag3={"#nybyggeri"}
           bgColor={"bg-light"}
+          alt={"new yorker dør i sort med 4 store glasruder"}
         />
         <CardItem
           title={"Speciel New Yorker dør"}
@@ -159,6 +168,9 @@ const Interiørarbejde = () => {
           hashtag2={"#specielt-design"}
           hashtag3={"#inspiration"}
           bgColor={"bg-light"}
+          alt={
+            "new yorker skydedør med glas til soveværelse, diagonalt design i toppen af døren"
+          }
         />
       </div>
     </div>

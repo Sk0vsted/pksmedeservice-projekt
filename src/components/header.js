@@ -1,17 +1,17 @@
-import React, { useState, useEffect } from 'react';
-import logo from '../img/logo_aflang.png';
-import { forwardRef } from 'react';
-import logo150x150 from '../img/logo150x150.png';
-import './css/header.css';
-import logo900x150 from '../img/logo900x150.png';
-import { Squash as Hamburger } from 'hamburger-react';
-import { motion, AnimatePresence } from 'framer-motion';
+import React, { useState, useEffect } from "react";
+import logo from "../img/logo_aflang.png";
+import { forwardRef } from "react";
+import logo150x150 from "../img/logo150x150.png";
+import "./css/header.css";
+import logo900x150 from "../img/logo900x150.png";
+import { Squash as Hamburger } from "hamburger-react";
+import { motion, AnimatePresence } from "framer-motion";
 import {
   NavLink,
   Route,
   Switch,
   BrowserRouter as Router,
-} from 'react-router-dom';
+} from "react-router-dom";
 
 const Header = forwardRef((props, ref) => {
   const [navOpen, setNavOpen] = useState(false);
@@ -32,7 +32,7 @@ const Header = forwardRef((props, ref) => {
   };
 
   const dropdownVariants = {
-    open: { height: 'auto', opacity: 1 },
+    open: { height: "auto", opacity: 1 },
     closed: { height: 0, opacity: 0 },
   };
 
@@ -57,11 +57,11 @@ const Header = forwardRef((props, ref) => {
       setIsMobile(window.innerWidth <= 768);
     };
 
-    window.addEventListener('resize', handleResize);
+    window.addEventListener("resize", handleResize);
     handleResize();
 
     return () => {
-      window.removeEventListener('resize', handleResize);
+      window.removeEventListener("resize", handleResize);
     };
   }, []);
 
@@ -150,7 +150,7 @@ const Header = forwardRef((props, ref) => {
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     className={`w-4 h-4 fill-current pt-1 ml-1 transition duration-200 ease-in-out ${
-                      servicesDropdownOpen ? 'rotate change-color' : ''
+                      servicesDropdownOpen ? "rotate change-color" : ""
                     } md:hidden xl:hidden`}
                     viewBox="0 0 24 24"
                   >
@@ -162,12 +162,12 @@ const Header = forwardRef((props, ref) => {
                     <div className="md:absolute top-full right-0 md:w-48 bg-darker md:shadow-lg md:rounded-b xl:hidden md:hidden">
                       <motion.ul
                         className={`child font-ubuntu flex flex-col ${
-                          servicesDropdownOpen ? '' : 'hidden md:block'
+                          servicesDropdownOpen ? "" : "hidden md:block"
                         }`}
                         initial={{ opacity: 0, y: -10 }}
                         animate={{ opacity: 1, y: 0 }}
                         exit={{ opacity: 0, y: -10 }}
-                        transition={{ duration: 0.4, ease: 'easeInOut' }}
+                        transition={{ duration: 0.4, ease: "easeInOut" }}
                         key="someUniqueKey"
                       >
                         <li className="w-full border-b border-gray-400 text-end">
@@ -257,7 +257,7 @@ const Header = forwardRef((props, ref) => {
         </div>
         <div
           className={`ml-auto md:hidden text-gray-500 cursor-pointer ${
-            isMobile ? '' : 'hidden'
+            isMobile ? "" : "hidden"
           }`}
           onClick={() => setNavOpen(!navOpen)}
         >

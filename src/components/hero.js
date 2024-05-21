@@ -46,7 +46,7 @@ export default function Hero({ title, description }) {
           <h1 className="lg:text-4xl text-3xl text-light font-medium font-roboto pt-0 lg:px-12 lg:pt-0">
             {title}
           </h1>
-          <p className="text-gray-100 text-lg font-ubuntu lg:px-12">
+          <p className="text-light text-lg font-ubuntu lg:px-12">
             {description}
           </p>
           <div className="button buttonCorrect lg:mt-5 lg:mr-0 md:mt-0 xl:mr-12 mt-5 relative z-1">
