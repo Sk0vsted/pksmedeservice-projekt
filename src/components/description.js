@@ -1,5 +1,5 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React from 'react';
+import { Link } from 'react-router-dom';
 
 export default function Description({
   title,
@@ -12,13 +12,13 @@ export default function Description({
       <h1 className="font-roboto bg-gray-100 text-dark font-thin text-3xl pb-12">
         {title}
       </h1>
-      <p className="font-ubuntu text-dark text-xl font-thin text-center">
+      <p className="font-ubuntu text-dark text-xl font-thin text-start">
         {description}
       </p>
-      <p className="font-ubuntu text-dark text-xl font-thin text-center pt-6">
+      <p className="font-ubuntu text-dark text-xl font-thin text-start pt-6">
         {description2}
       </p>
-      <p className="font-ubuntu text-dark text-xl font-thin text-center pt-6">
+      <p className="font-ubuntu text-dark text-xl font-thin text-start pt-6">
         {description3}
       </p>
       <h2 className="font-roboto bg-gray-100 text-dark font-thin text-2xl pb-6 pt-12">
