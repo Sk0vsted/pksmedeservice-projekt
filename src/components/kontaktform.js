@@ -29,8 +29,18 @@ const KontaktForm = ({ onFormSubmit }) => {
 
     try {
       const res = await axios.post(
-        "https://pksmedeservicebackend.vercel.app/api/sendgrid",
-        data,
+        "https://api.web3forms.com/submit",
+        {
+          access_key: process.env.REACT_APP_WEB3FORMS_KEY,
+          subject: `Ny besked fra ${data.fornavn} ${data.efternavn}`,
+          from_name: `${data.fornavn} ${data.efternavn}`,
+          reply_to: data.email,
+          fornavn: data.fornavn,
+          efternavn: data.efternavn,
+          email: data.email,
+          telefon: data.telefon,
+          besked: data.besked,
+        },
         {
           headers: {
             "Content-Type": "application/json",
